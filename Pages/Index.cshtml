@@ -1,0 +1,24 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<h1>Știri</h1>
+
+<table class="table">
+    
+    <tbody>
+        @foreach (var stire in Model.Stiri)
+        {
+            <div class="stire">
+                <h3><a asp-page="/Stire" asp-route-stireId="@stire.id">@stire.titlu</a></h3>
+                <p>@stire.lead</p>
+                <p>Adaugat de @stire.autor la data de @stire.Data in categoria @stire.Categorie.nume.</p>
+            </div>
+        }
+    </tbody>
+</table>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
