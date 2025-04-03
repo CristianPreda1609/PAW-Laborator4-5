@@ -1,0 +1,12 @@
+﻿@page
+@model Laborator4_5.Pages.StireModel
+@{
+    ViewData["Title"] = Model.Stire?.titlu ?? "Știrea nu a fost găsită";
+}
+
+<h2>@Model.Stire.titlu</h2>
+<p>@Model.Stire.lead</p>
+<p>@Model.Stire.continut</p>
+<p>Adăugat de @Model.Stire.autor la data de @Model.Stire.Data în categoria @Model.Stire.Categorie.nume.</p>
+
+<a asp-page="/Index">Înapoi la lista de știri</a>
